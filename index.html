@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bingo WïN - ቢንጎ ዊን</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-top: 50px;
+      background-color: #f0f8ff;
+    }
+    select, button {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    h1, p {
+      margin-bottom: 10px;
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #555;
+    }
+    img.logo {
+      max-width: 150px;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Bingo WïN Logo" class="logo">
+  <h1>Bingo WïN - ቢንጎ ዊን</h1>
+  <p>Choose Your Cartel / ካርተልዎን ይምረጡ</p>
+
+  <select id="cartelSelect">
+    <option value="">-- Choose Cartel / ካርተል ይምረጡ --</option>
+    <!-- Cartel options C1 to C50 -->
+    ${[...Array(50).keys()].map(i => {
+      const n = i + 1;
+      return `<option value="c${n}.html">Cartel C${n} / ካርተል C${n}</option>`;
+    }).join('\n')}
+  </select>
+
+  <br>
+  <button onclick="goToCartel()">Go / መዝገብ</button>
+
+  <footer>
+    <p>Powered by Web Node_ETH</p>
+  </footer>
+
+  <script>
+    function goToCartel() {
+      const selected = document.getElementById("cartelSelect").value;
+      if (selected) {
+        window.location.href = selected;
+      } else {
+        alert("Please select a cartel / እባክዎን ካርተል ይምረጡ");
+      }
+    }
+  </script>
+</body>
+</html>
