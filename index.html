@@ -1,164 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Web Node - Home</title>
-<style>
-  /* Basic Reset */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-
-  body {
-    font-family: Arial, sans-serif;
-    background: #e6f0ff;
-    color: #003366;
-  }
-
-  /* Loader Styles */
-  #loader {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-  .loader-circle {
-    border: 6px solid #cce0ff;
-    border-top: 6px solid #004aad;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    animation: spin 1.5s linear infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #004aad;
-    font-weight: bold;
-    font-size: 32px;
-    user-select: none;
-  }
-  @keyframes spin {
-    0% {transform: rotate(0deg);}
-    100% {transform: rotate(360deg);}
-  }
-
-  /* Navigation */
-  nav {
-    background: #004aad;
-    padding: 1rem 2rem;
-    display: flex;
-    gap: 1.5rem;
-  }
-  nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-  }
-  nav a:hover {
-    text-decoration: underline;
-  }
-
-  /* Main content */
-  main {
-    padding: 2rem;
-    max-width: 900px;
-    margin: auto;
-  }
-
-  h1 {
-    margin-bottom: 1rem;
-  }
-
-  /* Welcome Section with logo */
-  .welcome-section {
-    background-color: #0b0f12;
-    color: #e6eef6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 1rem;
-    text-align: center;
-    margin-bottom: 2rem;
-    border-radius: 12px;
-  }
-  .welcome-section .logo {
-    width: 200px;
-    animation: roundEdges 2s ease forwards;
-  }
-  @keyframes roundEdges {
-    0% { border-radius: 0; }
-    100% { border-radius: 50px; }
-  }
-  .welcome-section h1 {
-    font-size: 2.5rem;
-    margin: 20px 0 10px;
-  }
-  .welcome-section p {
-    font-size: 1.2rem;
-    color: #aab3bd;
-    max-width: 500px;
-  }
-  .welcome-section .btn {
-    background: #1e90ff;
-    color: white;
-    padding: 12px 24px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  .welcome-section .btn:hover {
-    background: #0d6efd;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You for Coming</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f7f7f7;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    video {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    textarea {
+      width: 100%;
+      height: 80px;
+      resize: vertical;
+      padding: 8px;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    #signature-pad {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+      height: 150px;
+      touch-action: none;
+      margin-bottom: 10px;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    #messages {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .message-item {
+      background: white;
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      word-wrap: break-word;
+    }
+    .message-text {
+      margin-bottom: 10px;
+      white-space: pre-wrap;
+    }
+    .signature-image {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      max-width: 300px;
+      max-height: 150px;
+    }
+    .clear-btn {
+      background: #dc3545;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      padding: 8px 16px;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    .clear-btn:hover {
+      background: #a71d2a;
+    }
+  </style>
 </head>
 <body>
+  <h1>Thank You for Coming!</h1>
 
-<!-- Loader -->
-<div id="loader">
-  <div class="loader-circle">W N</div>
-</div>
+  <video controls>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-<!-- Navigation -->
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About Us</a>
-  <a href="products.html">Products</a>
-  <a href="services.html">Services</a>
-  <a href="team.html">Team</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <form id="thankYouForm">
+    <label for="message">Your Message:</label><br />
+    <textarea id="message" placeholder="Write your thank you message here..." required></textarea>
 
-<!-- Welcome Section -->
-<section class="welcome-section">
-  <img src="logo.png" alt="Web Node_ETH Logo" class="logo" />
-  <h1>Welcome to Web Node_ETH</h1>
-  <p>Your hub for custom websites, local hosting, and digital solutions designed to elevate your business.</p>
-  <button class="btn">Get Started</button>
-</section>
+    <label for="signature-pad">Your Signature:</label><br />
+    <canvas id="signature-pad"></canvas><br />
+    <button type="button" class="clear-btn" id="clearSignature">Clear Signature</button>
 
-<!-- Main content -->
-<main>
-  <h1>Welcome to Web Node</h1>
-  <p>Your trusted partner in IT and Infrastructure Construction.</p>
-  <p>We specialize in delivering reliable IT solutions and building solid IT infrastructure tailored to your needs.</p>
-</main>
+    <button type="submit">Submit</button>
+  </form>
 
-<script>
-  // Hide loader after page loads
-  window.addEventListener('load', () => {
-    const loader = document.getElementById('loader');
-    loader.style.display = 'none';
-  });
-</script>
+  <div id="messages">
+    <h2>Messages from Participants</h2>
+  </div>
 
-</body>
-</html>
+  <script>
+    const canvas = document.getElementById('signature-pad');
+    const ctx = canvas.getContext('2d');
+    const clearBtn = document.getElementById('clearSignature');
+    const form = document.getElementById('thankYouForm');
+    const messagesDiv = document.getElementById('messages');
+
+    // Resize canvas to fit container
+    function resizeCanvas() {
+      const ratio = Math.max(window.devicePixel
