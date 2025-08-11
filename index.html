@@ -1,129 +1,164 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E Cartel</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #fdfdfd;
-      text-align: center;
-      padding: 20px;
-    }
-    header {
-      padding: 10px;
-    }
-    header img {
-      max-width: 150px;
-      height: auto;
-    }
-    h1 {
-      color: #b30000;
-    }
-    select {
-      padding: 10px;
-      font-size: 16px;
-      margin-top: 20px;
-      border-radius: 6px;
-    }
-    .footer {
-      margin-top: 50px;
-      font-size: 14px;
-      color: #333;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Web Node - Home</title>
+<style>
+  /* Basic Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #e6f0ff;
+    color: #003366;
+  }
+
+  /* Loader Styles */
+  #loader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  .loader-circle {
+    border: 6px solid #cce0ff;
+    border-top: 6px solid #004aad;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1.5s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #004aad;
+    font-weight: bold;
+    font-size: 32px;
+    user-select: none;
+  }
+  @keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+  }
+
+  /* Navigation */
+  nav {
+    background: #004aad;
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 1.5rem;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  /* Main content */
+  main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  /* Welcome Section with logo */
+  .welcome-section {
+    background-color: #0b0f12;
+    color: #e6eef6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+  }
+  .welcome-section .logo {
+    width: 200px;
+    animation: roundEdges 2s ease forwards;
+  }
+  @keyframes roundEdges {
+    0% { border-radius: 0; }
+    100% { border-radius: 50px; }
+  }
+  .welcome-section h1 {
+    font-size: 2.5rem;
+    margin: 20px 0 10px;
+  }
+  .welcome-section p {
+    font-size: 1.2rem;
+    color: #aab3bd;
+    max-width: 500px;
+  }
+  .welcome-section .btn {
+    background: #1e90ff;
+    color: white;
+    padding: 12px 24px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .welcome-section .btn:hover {
+    background: #0d6efd;
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <img src="logo.png" alt="Bingo Wïn Logo" />
-    <h1>E Cartel</h1>
-  </header>
-
-  <p>Choose your Cartel to Play</p>
-  <select onchange="location.href=this.value">
-    <option disabled selected>Select Cartel</option>
-    <option value="c1.html">Cartel C1</option>
-    <option value="c2.html">Cartel C2</option>
-    <option value="c3.html">Cartel C3</option>
-    <option value="c4.html">Cartel C4</option>
-    <option value="c5.html">Cartel C5</option>
-    <option value="c6.html">Cartel C6</option>
-    <option value="c7.html">Cartel C7</option>
-    <option value="c8.html">Cartel C8</option>
-    <option value="c9.html">Cartel C9</option>
-    <option value="c10.html">Cartel C10</option>
-    <option value="c11.html">Cartel C11</option>
-    <option value="c12.html">Cartel C12</option>
-    <option value="c13.html">Cartel C13</option>
-    <option value="c14.html">Cartel C14</option>
-    <option value="c15.html">Cartel C15</option>
-    <option value="c16.html">Cartel C16</option>
-    <option value="c17.html">Cartel C17</option>
-    <option value="c18.html">Cartel C18</option>
-    <option value="c19.html">Cartel C19</option>
-    <option value="c20.html">Cartel C20</option>
-    <option value="c21.html">Cartel C21</option>
-    <option value="c22.html">Cartel C22</option>
-    <option value="c23.html">Cartel C23</option>
-    <option value="c24.html">Cartel C24</option>
-    <option value="c25.html">Cartel C25</option>
-    <option value="c26.html">Cartel C26</option>
-    <option value="c27.html">Cartel C27</option>
-    <option value="c28.html">Cartel C28</option>
-    <option value="c29.html">Cartel C29</option>
-    <option value="c30.html">Cartel C30</option>
-    <option value="c31.html">Cartel C31</option>
-    <option value="c32.html">Cartel C32</option>
-    <option value="c33.html">Cartel C33</option>
-    <option value="c34.html">Cartel C34</option>
-    <option value="c35.html">Cartel C35</option>
-    <option value="c36.html">Cartel C36</option>
-    <option value="c37.html">Cartel C37</option>
-    <option value="c38.html">Cartel C38</option>
-    <option value="c39.html">Cartel C39</option>
-    <option value="c40.html">Cartel C40</option>
-    <option value="c41.html">Cartel C41</option>
-    <option value="c42.html">Cartel C42</option>
-    <option value="c43.html">Cartel C43</option>
-    <option value="c44.html">Cartel C44</option>
-    <option value="c45.html">Cartel C45</option>
-    <option value="c46.html">Cartel C46</option>
-    <option value="c47.html">Cartel C47</option>
-    <option value="c48.html">Cartel C48</option>
-    <option value="c49.html">Cartel C49</option>
-    <option value="c50.html">Cartel C50</option>
-
-  </select>
-
-
-
-<!-- Sponsor Ad Container -->
-<div style="
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 20px 0;
-  background-color: #f9f9f9;
-  text-align: center;
-  border-radius: 8px;
-  max-width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-" id="sponsor">
-  <p style="font-size: 1.5em; font-weight: bold; margin: 5px 0;">Web Node Ethiopia</p>
-  <p style="font-size: 0.9em; color: #555; margin: 0 0 10px;">IT System Solution</p>
-  <img src="your-ad-image.jpg" alt="Ad Image" style="max-width: 100%; height: auto;" />
-  <p>
-    Visit our sponsor: 
-    <a href="https://example.com" target="_blank">example.com</a>
-  </p>
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-circle">W N</div>
 </div>
 
-  <div class="footer">
-    Powered by Web Node 🫱🫲0955498955
-  </div>
+<!-- Navigation -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="products.html">Products</a>
+  <a href="services.html">Services</a>
+  <a href="team.html">Team</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<!-- Welcome Section -->
+<section class="welcome-section">
+  <img src="logo.png" alt="Web Node_ETH Logo" class="logo" />
+  <h1>Welcome to Web Node_ETH</h1>
+  <p>Your hub for custom websites, local hosting, and digital solutions designed to elevate your business.</p>
+  <button class="btn">Get Started</button>
+</section>
+
+<!-- Main content -->
+<main>
+  <h1>Welcome to Web Node</h1>
+  <p>Your trusted partner in IT and Infrastructure Construction.</p>
+  <p>We specialize in delivering reliable IT solutions and building solid IT infrastructure tailored to your needs.</p>
+</main>
+
+<script>
+  // Hide loader after page loads
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    loader.style.display = 'none';
+  });
+</script>
 
 </body>
 </html>
